@@ -74,6 +74,17 @@ class LinkedList {
             return current.value
         }
     }
+
+    pop() {
+        if (this._head === null) {
+            return undefined
+        } else {
+            let current = this._head
+            let val = this._head.value
+            this._head = current.nextNode
+            return val
+        }
+    }
 }
 
 
