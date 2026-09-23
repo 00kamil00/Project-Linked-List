@@ -125,6 +125,26 @@ class LinkedList {
         result += "null"
         return result
     }
+
+    insertAt(index, ...values) {
+        if (index < 0 || index > this.size()) {
+            throw new RangeError("Index out of bounds")
+        } else if (index === 0) {
+            for (let i = values.length - 1; i >= 0; i--) {
+                this.prepend(values[i])
+            }
+        } else {
+            let current = this._head
+            for (let i = 0; i < index - 1; i++) {
+                current = current.nextNode
+            }
+            for (const val of values) {
+                const newNode = new Node(val, current.nextNode)
+                current.nextNode = newNode
+                current = newNode
+            }
+        }
+    }
 }
 
 
