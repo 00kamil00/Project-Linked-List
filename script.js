@@ -51,6 +51,29 @@ class LinkedList {
             return current.value
         }
     }
+
+    at(index) {
+        let currentIndex = 0
+        if (index < currentIndex) {
+            return undefined
+        } else {
+            let current = this._head
+            if (current === null) {
+                return undefined
+            } else {
+                for (let i = 0; i < index; i++) {
+                    if (current === null) {
+                        return undefined
+                    } 
+                    current = current.nextNode
+                }
+               if (current === null) {
+                return undefined
+               } 
+            }
+            return current.value
+        }
+    }
 }
 
 
