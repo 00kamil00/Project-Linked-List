@@ -21,6 +21,16 @@ class LinkedList {
             current.nextNode = newNode
         }
     }
+
+    size() {
+        let count = 0
+        let current = this.head
+        while (current !== null) {
+            count++
+            current = current.nextNode
+        }
+        return count
+    }
 }
 
 
@@ -31,14 +41,3 @@ class Node {
         this.nextNode = nextNode
     }
 }
-
-
-// const list = new LinkedList()
-// list.append("B")
-// list.prepend("A")
-// list.append("C")
-
-// console.log(list.head.value)
-// console.log(list.head.nextNode.value)
-// console.log(list.head.nextNode.nextNode.value)
-// console.log(list.head.nextNode.nextNode.nextNode)
