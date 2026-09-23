@@ -85,6 +85,18 @@ class LinkedList {
             return val
         }
     }
+
+    contains(value) {
+        let current = this._head
+        while (current !== null) {
+            if (current.value === value) {
+                return true
+            } else {
+                current = current.nextNode
+            }
+        }
+        return false
+    }
 }
 
 
